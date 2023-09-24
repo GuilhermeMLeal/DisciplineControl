@@ -7,6 +7,6 @@ class StudentEntity(models.Model):
     name  = models.CharField(blank=False, null=False, max_length=255)
     email = models.CharField(blank=False, null=False, max_length=255)
 
-    # Com modelo de retorno ToString com os 2 parâmetros(nome e email)
+    # Com retorno ToString com os 2 parâmetros(nome e email)
     def __str__(self) -> str:
-        return self.name, self.email
+        return f'{self.name},{self.email}'

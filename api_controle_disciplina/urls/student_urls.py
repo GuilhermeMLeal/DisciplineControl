@@ -4,8 +4,10 @@ from django.urls import path,include
 
 #Criei 2 views para fazer a separação entre funções gerais e específicas
 urlpatterns = [
-    # Path com base em cadastrar usuários(POST USER) e capturar todos os usuários(GET - ALL).
+    # Path com objetivo de cadastrar usuário(POST USER) e capturar todos os usuários, com as suas devidas informações(GET - ALL).
     path('', StudentView.as_view(), name='students'),
-    # Path com base na atualização de usuário, capturar informações sobre ele e deletá-lo
+    # Path com funções de atualizar um usuário(PUT), capturar informações sobre ele(GET) e deletá-lo(DELETE).
     path('<int:pk>/', SpecificStudentView.as_view(), name='student'),
+    #   
+    #path('<int:pk>/task/')
 ]

@@ -6,8 +6,8 @@ from api_controle_disciplina.views.task_view.specific_task_view import SpecificT
 
 #Criei 2 views para fazer a separação entre funções gerais e específicas
 urlpatterns = [
-    # Path com base em cadastrar tarefas(POST TASK) e capturar todas as tarefas(GET - ALL).
+    # Path com objetivo em cadastrar tarefa(POST TASK) e capturar todas as tarefas, com as suas devidas informações (GET - ALL).
     path('', TaskView.as_view(), name='tasks'),
-    # Path com base na atualização de tarefas(PUT), capturar informações sobre ele(GET) e deletá-lo(DELETE)
+    # Path com base na atualização de tarefa(PUT), capturar informações sobre ela(GET) e deletá-la(DELETE).
     path('<int:pk>/', SpecificTaskView.as_view(), name='task'),
 ]

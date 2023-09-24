@@ -6,8 +6,8 @@ from api_controle_disciplina.views.subject_view.specific_subject_view import Spe
 
 #Criei 2 views para fazer a separação entre funções gerais e específicas.
 urlpatterns = [
-    # Path com base em cadastrar matérias(POST SUBJECT) e capturar todas as matérias(GET - ALL).
+    # Path com objetivo de cadastrar matéria(POST SUBJECT) e capturar todas as matérias,com as suas devidas informações (GET - ALL).
     path('', SubjectView.as_view(), name='subjects'),
-    # Path com base na atualização de matérias(PUT), capturar informações sobre ele(GET) e deletá-lo(DELETE)
+    # Path com funções de atualização de uma matéria (PUT), capturar informações sobre ela(GET) e deletá-la(DELETE).
     path('<int:pk>/', SpecificSubjectView.as_view(), name='subjects'),
 ]

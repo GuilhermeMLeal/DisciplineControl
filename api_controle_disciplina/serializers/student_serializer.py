@@ -4,6 +4,6 @@ from api_controle_disciplina.models.student_model import StudentEntity
 # Classe para serialização de dados de estudante
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
-        #Captando o modelo estudante e todos seus campos
-        model = StudentEntity
-        fields = '__all__'
+        
+        model = StudentEntity # Modelo que será serializado(estudante)
+        fields = '__all__' # Inclui todos os campos do modelo para serem serializados

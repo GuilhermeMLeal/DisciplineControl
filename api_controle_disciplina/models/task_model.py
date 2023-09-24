@@ -11,6 +11,6 @@ class TaskEntity(models.Model):
     task_student = models.ForeignKey(StudentEntity, on_delete=models.CASCADE) 
     task_subject = models.ManyToManyField(SubjectEntity)  
 
-    # Com modelo de retorno ToString com os 3 parâmetros(Titulo, descrição e data de entrega da tarefa)
+    # Com retorno ToString com os 3 parâmetros(Titulo, descrição e data de entrega da tarefa)
     def __str__(self) -> str:
-        return self.title, self.description, self.homework_date
+        return f'{self.title}, {self.description}, {self.homework_date}'
