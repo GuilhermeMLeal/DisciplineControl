@@ -9,37 +9,40 @@ from django.http import Http404, JsonResponse
 class SpecificTaskView(APIView):
      # Função para pegar uma tarefas e retorne os dados dela
     def get(self,request,pk):
+        # Tente pegar a tarefa através do seu id, serialize e retorne com seus dados.
         try:
-             # Tente "capturar" uma tarefa através da sua primary key(chave primária) e serialize ele.
             task = TaskEntity.objects.get(pk=pk)
             serializer = TaskSerializer(task)
             return JsonResponse(serializer.data)
-        # Se não existir/ não encontrar , retorne um 404
+        # Não existindo uma tarefa, retorne um 404(NOT FOUND)
         except TaskEntity.DoesNotExist:
             return Http404(serializer.errors,status=status.HTTP_404_NOT_FOUND)
         
     #Função para atualizar os dados de uma tarefa 
     def put(self, request, pk):
+        # Tente aplicar um método GET, serialize e se conseguir retorne os dados serializados.
         try:
-            # Execute as mesmas funções do método GET (acima)
             subject = TaskEntity.objects.get(pk=pk)
             serializer = TaskSerializer(subject, data=request.data)
             # "Capture" os dados digitados pelo usuário
             if serializer.is_valid():
                 serializer.save()
                 return Response(serializer.data)
+            # Se não conseguir serializar, foi erro cometido pelo lado do cliente, ou poderia ser até mesmo um erro 500 do próprio servidor.
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        # Tarefa inexistente e retorne um não encontrado.
         except TaskEntity.DoesNotExist:
             raise Response('Task not found', status=status.HTTP_404_NOT_FOUND)
     
-    #Aqui está a remoção de um usuário.
+    #Aqui está a remoção de uma tarefa.
     def delete(self, request, pk):
-        # Execute um GET e se der certo: 
+        # Tente deletar uma tarefa e se conseguir retorne uma disciplina excluida com sucesso.
         try:
             subject = TaskEntity.objects.get(pk=pk)
             # Delete uma tarefa e retorne um 204.
             subject.delete()
             return Response('Task excluded with success', status=status.HTTP_204_NO_CONTENT)
+        # Se não conseguir, significa que a tarefa não existe e retorne um 404.
         except TaskEntity.DoesNotExist:
             return Http404('Task not found', status=status.HTTP_404_NOT_FOUND)   
     

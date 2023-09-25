@@ -3,16 +3,18 @@ from rest_framework.response import Response
 from rest_framework import status
 from api_controle_disciplina.models.subject_model import SubjectEntity
 from api_controle_disciplina.serializers.subject_serializer import SubjectSerializer  
-from django.http import Http404, HttpResponseBadRequest
+from django.http import Http404, HttpResponseBadRequest, JsonResponse
 
-# View geral para matérias
+# View geral para disciplinas
 class SubjectView(APIView):
     # Executando um GET e "capturando" todos os dados de matérias existentes e retorne-as.
     def get(self, request):
+        # Tente em pegar todos os objetos da entidade Disciplina(SubjectEntity) e retorne o seus dados
         try:
             subjects = SubjectEntity.objects.all()
             serializer = SubjectSerializer(subjects, many=True)
             return Response(serializer.data)
+        # Caso ao contrário, retorne um erro 404 falando que não existe aqueles dados
         except SubjectEntity.DoesNotExist:
             raise Http404(serializer.errors,status=status.HTTP_404_NOT_FOUND)
     
@@ -24,6 +26,7 @@ class SubjectView(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return HttpResponseBadRequest(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        # Caso contrário, retorne um erro de requisição feito pelo cliente 
+        raise HttpResponseBadRequest(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     
