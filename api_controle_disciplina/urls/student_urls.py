@@ -10,5 +10,5 @@ urlpatterns = [
     # Path com funções de atualizar um usuário(PUT), capturar informações sobre ele(GET) e deletá-lo(DELETE).
     path('<int:pk>/', SpecificStudentView.as_view(), name='student'),
     # Path com função de retornar todas as tarefas associadas a um determinado aluno, retornando assim com um GET, todos os dados.
-    path('<int:pk>/tasks/', TaskStudentView.as_view(), name='task_student'),
+    path('<int:pk>/tarefas/', TaskStudentView.as_view(), name='task_student'),
 ]

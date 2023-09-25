@@ -28,7 +28,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/student/",
+							"raw": "http://127.0.0.1:8000/api/alunos/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -39,7 +39,7 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"student",
+								"alunos",
 								""
 							]
 						}
@@ -53,7 +53,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Guilherme aaaal\",\r\n    \"email\":\"guileherme.mleal.1@gmail.com\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Guilherme aaaal\",\r\n    \"email\":\"guileherme.mleal.1@gmail1.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -61,7 +61,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/student/",
+							"raw": "http://127.0.0.1:8000/api/alunos/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -72,7 +72,7 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"student",
+								"alunos",
 								""
 							]
 						}
@@ -97,7 +97,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/student/1/",
+							"raw": "http://127.0.0.1:8000/api/alunos/7/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -108,8 +108,8 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"student",
-								"1",
+								"alunos",
+								"7",
 								""
 							]
 						}
@@ -131,7 +131,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/student/4/",
+							"raw": "http://127.0.0.1:8000/api/alunos/7/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -142,8 +142,8 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"student",
-								"4",
+								"alunos",
+								"7",
 								""
 							]
 						}
@@ -157,7 +157,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Guilherme Martins Leal\",\r\n    \"email\": \"guileherme.ml1eal.1@gmail.com\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Guilherme Martins Leal\",\r\n    \"email\": \"joao.ml1eal.1@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -165,7 +165,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/student/5/",
+							"raw": "http://127.0.0.1:8000/api/alunos/5/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -176,7 +176,7 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"student",
+								"alunos",
 								"5",
 								""
 							]
@@ -202,7 +202,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/student/5/tasks/",
+							"raw": "http://127.0.0.1:8000/api/alunos/3/tarefas/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -213,9 +213,9 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"student",
-								"5",
-								"tasks",
+								"alunos",
+								"3",
+								"tarefas",
 								""
 							]
 						}
@@ -246,7 +246,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/subject/",
+							"raw": "http://127.0.0.1:8000/api/disciplinas/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -257,7 +257,7 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"subject",
+								"disciplinas",
 								""
 							]
 						}
@@ -279,7 +279,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/subject/",
+							"raw": "http://127.0.0.1:8000/api/disciplinas/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -290,7 +290,7 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"subject",
+								"disciplinas",
 								""
 							]
 						}
@@ -315,7 +315,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/subject/3/",
+							"raw": "http://127.0.0.1:8000/api/disciplinas/4/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -326,8 +326,8 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"subject",
-								"3",
+								"disciplinas",
+								"4",
 								""
 							]
 						}
@@ -349,7 +349,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/subject/1/",
+							"raw": "http://127.0.0.1:8000/api/disciplinas/4/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -360,8 +360,8 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"subject",
-								"1",
+								"disciplinas",
+								"4",
 								""
 							]
 						}
@@ -383,7 +383,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/subject/3/",
+							"raw": "http://127.0.0.1:8000/api/disciplinas/3/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -394,7 +394,7 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"subject",
+								"disciplinas",
 								"3",
 								""
 							]
@@ -426,7 +426,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/task/",
+							"raw": "http://127.0.0.1:8000/api/tarefas/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -437,7 +437,7 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"task",
+								"tarefas",
 								""
 							]
 						}
@@ -459,7 +459,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/task/",
+							"raw": "http://127.0.0.1:8000/api/tarefas/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -470,7 +470,7 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"task",
+								"tarefas",
 								""
 							]
 						}
@@ -495,7 +495,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/task/2/",
+							"raw": "http://127.0.0.1:8000/api/tarefas/5/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -506,8 +506,8 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"task",
-								"2",
+								"tarefas",
+								"5",
 								""
 							]
 						}
@@ -529,7 +529,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/task/2/",
+							"raw": "http://127.0.0.1:8000/api/tarefas/3/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -540,8 +540,8 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"task",
-								"2",
+								"tarefas",
+								"3",
 								""
 							]
 						}
@@ -563,7 +563,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/task/3/",
+							"raw": "http://127.0.0.1:8000/api/tarefas/4/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -574,8 +574,8 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"task",
-								"3",
+								"tarefas",
+								"4",
 								""
 							]
 						}
