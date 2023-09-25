@@ -43,7 +43,7 @@ code .
  Ative o terminal na sua IDE, logo após execute os seguintes comandos:
 ```
 python -m venv .env
-./.venv/Scripts/activate
+./.env/Scripts/activate
 ```
 
 6. **Instalando o requirements.txt para obter todas as dependências**
