@@ -16,7 +16,7 @@ class StudentView(APIView):
             return Response(serializer.data)
         # Caso ao contrário, retorne um erro 404 falando que não existe aqueles dados.
         except StudentEntity.DoesNotExist:
-            raise Http404(serializer.errors,status=status.HTTP_404_NOT_FOUND)
+            raise Http404('Student dont exist , try to add',serializer.errors,status=status.HTTP_404_NOT_FOUND)
         
     # Cadastro de disciplina
     def post(self, request):
@@ -27,5 +27,5 @@ class StudentView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         # Caso contrário, retorne um erro de requisição feito pelo cliente 
-        raise HttpResponseBadRequest(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        raise HttpResponseBadRequest('Error with fields, try again',serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

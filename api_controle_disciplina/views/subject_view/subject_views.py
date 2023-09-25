@@ -16,7 +16,7 @@ class SubjectView(APIView):
             return Response(serializer.data)
         # Caso ao contrário, retorne um erro 404 falando que não existe aqueles dados
         except SubjectEntity.DoesNotExist:
-            raise Http404(serializer.errors,status=status.HTTP_404_NOT_FOUND)
+            raise Http404('Subject do not exist, try to add one',serializer.errors,status=status.HTTP_404_NOT_FOUND)
     
     # Cadastro de matérias
     def post(self, request):
@@ -27,6 +27,6 @@ class SubjectView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         # Caso contrário, retorne um erro de requisição feito pelo cliente 
-        raise HttpResponseBadRequest(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        raise HttpResponseBadRequest('Error with fields, try again',serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     

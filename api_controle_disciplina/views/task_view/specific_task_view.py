@@ -16,7 +16,7 @@ class SpecificTaskView(APIView):
             return JsonResponse(serializer.data)
         # Não existindo uma tarefa, retorne um 404(NOT FOUND)
         except TaskEntity.DoesNotExist:
-            return Http404(serializer.errors,status=status.HTTP_404_NOT_FOUND)
+            return Http404('Task does not exist, try another',serializer.errors,status=status.HTTP_404_NOT_FOUND)
         
     #Função para atualizar os dados de uma tarefa 
     def put(self, request, pk):
@@ -29,7 +29,7 @@ class SpecificTaskView(APIView):
                 serializer.save()
                 return Response(serializer.data)
             # Se não conseguir serializar, foi erro cometido pelo lado do cliente, ou poderia ser até mesmo um erro 500 do próprio servidor.
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response('Task serializer error',serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         # Tarefa inexistente e retorne um não encontrado.
         except TaskEntity.DoesNotExist:
             raise Response('Task not found', status=status.HTTP_404_NOT_FOUND)

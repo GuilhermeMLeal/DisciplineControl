@@ -16,7 +16,7 @@ class SpecificSubjectView(APIView):
             return JsonResponse(serializer.data)
         # Não existindo uma disciplina, retorne um 404(NOT FOUND)
         except SubjectEntity.DoesNotExist:
-            raise Http404(serializer.errors, status= status.HTTP_404_NOT_FOUND)
+            raise Http404('Subject does not exist, try another',serializer.errors, status= status.HTTP_404_NOT_FOUND)
    
         
     #Função para atualizar os dados de uma disciplina.
@@ -29,7 +29,7 @@ class SpecificSubjectView(APIView):
                 serializer.save()
                 return Response(serializer.data)
             # Se não conseguir serializar, foi erro cometido pelo lado do cliente, ou poderia ser até mesmo um erro 500 do próprio servidor.
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return HttpResponseBadRequest('Subject serializer error', serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         # Disciplina inexistente e retorne um não encontrado.
         except SubjectEntity.DoesNotExist:
             raise Response('Subject not found', status=status.HTTP_404_NOT_FOUND)

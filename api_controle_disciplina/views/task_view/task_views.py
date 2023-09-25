@@ -17,7 +17,7 @@ class TaskView(APIView):
             return Response(serializer.data)
         # Caso ao contrário, retorne um erro 404 falando que não existe aqueles dados.
         except TaskEntity.DoesNotExist:
-            raise Http404(serializer.error, status = status.HTTP_404_NOT_FOUND)
+            raise Http404('Task do not exist, try to add one',serializer.error, status = status.HTTP_404_NOT_FOUND)
         
     # Cadastro de tarefas
     def post(self, request):
@@ -28,6 +28,6 @@ class TaskView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         # Caso contrário, retorne um erro de requisição feito pelo cliente 
-        raise HttpResponseBadRequest(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        raise HttpResponseBadRequest('Error with fields, try again',serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     

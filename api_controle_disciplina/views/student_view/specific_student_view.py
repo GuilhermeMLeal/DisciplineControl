@@ -17,7 +17,7 @@ class SpecificStudentView(APIView):
             return JsonResponse(serializer.data)
         # Não existindo o aluno, retorne um 404(NOT FOUND)
         except StudentEntity.DoesNotExist:
-            raise Http404(serializer.errors, status = status.HTTP_404_NOT_FOUND)
+            raise Http404('Student not found, try another',serializer.errors, status = status.HTTP_404_NOT_FOUND)
 
     # Função para atualizar os dados de um aluno.
     def put(self, request, pk):
@@ -29,7 +29,7 @@ class SpecificStudentView(APIView):
                 serializer.save()
                 return Response(serializer.data)
             # Se não conseguir serializar, foi erro cometido pelo lado do cliente, ou poderia ser até mesmo um erro 500 do próprio servidor.
-            return HttpResponseBadRequest(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return HttpResponseBadRequest('Student serializer error',serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         # Aluno inexistente e retorne um não encontrado.
         except StudentEntity.DoesNotExist:
             raise Http404('Student not found', status=status.HTTP_404_NOT_FOUND)

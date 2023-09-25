@@ -12,7 +12,7 @@ class TaskStudentView(APIView):
         try:
             student = StudentEntity.objects.get(pk=pk)
         except StudentEntity.DoesNotExist:
-            return Http404('Student not found', status=status.HTTP_404_NOT_FOUND)
+            return Http404('Student not found, try to add', status=status.HTTP_404_NOT_FOUND)
 
         # Recupere todas as tarefas relacionadas ao aluno
         tasks = TaskEntity.objects.filter(task_student=student)
